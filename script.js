@@ -23,8 +23,11 @@ let getPlayerChoice = () => {
    arr.splice(0, 1, firstWord); 
    return arr.join("");  /* returns player choice */
 }
+/*
 
 let playRound = (playerSelection, computerSelection) => {
+    let playerScore = 0;
+    let computerScore = 0;
     if (playerSelection == "Scissors" && computerSelection == "Rock") {
         return "You lose! Rock beats Scissors"
     } else  if (playerSelection == "Rock" && computerSelection == "Scissors") {
@@ -44,4 +47,53 @@ let playRound = (playerSelection, computerSelection) => {
     }
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+*/ 
+/* console.log(playRound(getPlayerChoice(), getComputerChoice())); */
+
+let playGame = () => {
+    let playerScore = 0, computerScore = 0;
+    let i;
+    let playRound = (playerSelection, computerSelection) => {
+        if (playerSelection == "Scissors" && computerSelection == "Rock") {
+             alert(`You lose! ${playerSelection} beats ${computerSelection}.`)
+             computerScore++;
+        } else  if (playerSelection == "Rock" && computerSelection == "Scissors") {
+            alert(`You win! ${playerSelection} beats ${computerSelection}.`)
+            playerScore++;
+        } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+            alert(`You lose! ${playerSelection} beats ${computerSelection}.`)
+            computerScore++
+        } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+            alert(`You win! ${playerSelection} beats ${computerSelection}.`)
+            playerScore++;
+        } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+            alert(`You lose! ${playerSelection} beats ${computerSelection}.`)
+            computerScore++
+        } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+            alert(`You win! ${playerSelection} beats ${computerSelection}.`)
+            playerScore++;
+        } else if (playerSelection == computerSelection) {
+            alert("Tie")
+            i--;
+        } else {
+            alert(`I thought we are supposed to play "Rock", "Paper", or "Scissors"? 😭`)
+            i--;
+        }
+    }
+    for (i = 1; i <= 10; i++) {
+        if (playerScore !== 5 && computerScore !== 5) {
+            playRound(getPlayerChoice(), getComputerChoice());
+        } if (playerScore == 5 && computerScore < 5) {
+            alert("You win!");
+            break;
+        } else if (computerScore == 5 && playerScore < 5) {
+            alert("You lose....")
+            break;
+        }
+        alert(`Current score: You ${playerScore} : CPU ${computerScore}`)
+        console.log(playerScore)
+        console.log(computerScore)
+    }
+}
+
+console.log(playGame());
