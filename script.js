@@ -9,4 +9,8 @@ let playerSelection = () => {
     console.log(playerChoice.toLowerCase());
 }
 
-playerSelection();
+let computerSelection = () => {
+    return getComputerChoice(); /* at least it works */
+}
+
+console.log(computerSelection());
