@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goofy ahh RPS - Console 😱</title>
-    <script src="script.js"></script>
+    <title>Goofy ahh RPS - NOW IN UI 🤯😎</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 1em;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+        .scores {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+        .buttons {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 5px;
+        }
+    </style>
 <body>
-    
+    <div class="container">
+        <div class="scores">
+            <h1>Player Score:</h1>
+            <h1 class = "playerScore">0</p>
+        </div>
+        <div class="scores">
+            <h1>CPU Score 🖥:</h1>
+            <h1 class = "computerScore">0</p>
+        </div>
+        <div class="buttons">
+            <button class = "rock">Rock 💎</button>
+            <button class = "paper">Paper 🧻</button>
+            <button class = "scissors">Scissors ✂</button>
+        </div>
+        <p class="status"></p>
+    </div>   
+    <script src="script.js"></script>
 </body>
 </html>
