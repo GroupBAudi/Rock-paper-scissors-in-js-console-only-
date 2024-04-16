@@ -25,8 +25,7 @@ let playGame = () => {
     }
     // console.log(`getComputerChoice() = ${getComputerChoice()}`);
     // console.log(playerChoice)
-    console.log(`player score = ${playerScore}`);
-    console.log(`computer  score = ${computerScore}`);
+    
     let text = document.querySelector(".status")
     let playerScoreCounter = document.querySelector(".playerScore");
     let computerScoreCounter = document.querySelector(".computerScore");
@@ -63,8 +62,9 @@ let playGame = () => {
         playGame.removeEventListener("click", playerSelection);
         text.textContent = "Oh noes, Mr. Computer 🖥 wins! Better luck next time! ";
     }
-    oneRound(getComputerChoice());
+    oneRound(getComputerChoice());;
     })
 }
 
 playGame();
+
